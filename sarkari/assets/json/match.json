@@ -1,0 +1,51 @@
+{
+	
+	"innings1":{
+		"batsman":{
+			"1":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"2":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"3":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"4":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"5":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"6":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"7":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"8":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"9":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"10":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"11":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"}
+		},
+		"bowler":{
+			"guptil":{"runs":"10","Overs":4,"Wickets":4}
+		},
+		"overs":{
+			"1":{"score":[0,1,2,"W",1,4],"bowler":"1", "bowler_name":"guptil"},
+			"2":{"score":[0,1,2,"W",1,4],"bowler":"1", "bowler_name":"guptil"},
+			"3":{"score":[0,1,2,"W",1,4],"bowler":"1", "bowler_name":"guptil"},
+			"4":{"score":[0,1,2,"W",1,4],"bowler":"1", "bowler_name":"guptil"},
+		}
+	},
+	"innings2":{
+		"batsman":{
+			"1":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"2":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"3":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"4":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"5":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"6":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"7":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"8":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"9":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"10":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"},
+			"11":{"runs":[0,1,2,3,4,5,6,1],"batsman":"1","batsman_name":"virat"}
+		},
+		"bowler":{
+			"guptil":{"runs":"10","Overs":4,"Wickets":4}
+		},
+		"overs":{
+			"1":{"score":[0,1,2,"W",1,4],"bowler":"1", "bowler_name":"guptil"},
+			"2":{"score":[0,1,2,"W",1,4],"bowler":"1", "bowler_name":"guptil"},
+			"3":{"score":[0,1,2,"W",1,4],"bowler":"1", "bowler_name":"guptil"},
+			"4":{"score":[0,1,2,"W",1,4],"bowler":"1", "bowler_name":"guptil"}
+		}
+	}
+}
