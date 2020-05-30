@@ -91,3 +91,6 @@ define('FAVICON32', $siteUrl.'assets/img/favicon/favicon-32x32.png');
 
 define('APIURL', $siteUrl);
 define('INSTRUCTIONURL', 'exam-instructions/');
+
+$btnColors = array('submit'=>'icon-polygon green','review'=>'icon-polygon orange','skip'=>'icon-polygon blue','default'=>'icon-polygon gray');
+define('BTNCOLORS', $btnColors);

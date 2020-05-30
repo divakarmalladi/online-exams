@@ -27,11 +27,25 @@ class Home_model extends CI_Model {
         }
     }
 
-    public function insertQuery($table, $data){
+    public function insertQuery($table, $data, $batch = ''){
         if($table=='') return false;
         try{
-            $query = $this->db->insert($table, $data);
+            if($batch=='insert_batch'){
+                $query = $this->db->insert_batch($table, $data);
+            }else{
+                $query = $this->db->insert($table, $data);    
+            }
+            
             return $insId = $this->db->insert_id();
+        }catch(Exception $e){
+            log_message('error', $e->getMessage());
+        }
+    }
+    public function updateQuery($table, $data, $where){
+        if($table=='') return false;
+        try{
+            $query = $this->db->set($data)->where($where)->update($table);
+            return true;
         }catch(Exception $e){
             log_message('error', $e->getMessage());
         }

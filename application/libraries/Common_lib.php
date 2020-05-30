@@ -59,4 +59,43 @@ class Common_lib{
 			redirect('login'.($lastSegment!=''?'/'.$lastSegment:''));
 		}
 	}
+	public function prepare_exam_json($qn_data,$result_id,$questionno){
+		if(file_exists('assets/json/exam/'.$result_id.'.json')){
+			$result = json_decode(file_get_contents('assets/json/exam/'.$result_id.'.json'), TRUE);
+			$result[$questionno] = $qn_data;
+		}else{
+			$result =array();
+			$result[$questionno] = $qn_data;
+		}
+		$fp = fopen('assets/json/exam/'.$result_id.'.json', 'w');
+		fwrite($fp, json_encode($result));
+		fclose($fp);
+		//$result = json_decode(file_get_contents('assets/json/exam/'.$result_id.'.json'));
+		return $result;
+	}
+	public function prepare_questions_json($exam_id){
+		$ci = &get_instance();
+		$ci->load->model('home_model');
+		$where = "question!='' AND (tid=$exam_id OR pid=$exam_id OR spid=$exam_id OR qpid=$exam_id)";
+		$questions = $ci->home_model->selectQuery('id,question,option1,option2,option3,option4,option5,correct_option,qa_date,section_description,max_marks,answer', 'exams_qa', $where,'id','desc',100);
+		$filName = '';
+		if(!empty($questions)){
+			shuffle($questions);
+			$filName = time().'_'.$ci->session->has_userdata('USERID').'_'.$exam_id.'.json';
+			$ci->session->set_userdata('exam_paper_'.$exam_id,  $filName);
+			$ci->session->set_userdata('exam_id',  $exam_id);
+			$fp = fopen('assets/json/questions/'.$filName, 'w');
+			fwrite($fp, json_encode($questions));
+			fclose($fp);	
+		}
+		return $filName;
+	}
+	public function get_question_data($exam_paper, $quesNumber=0){
+		$json = json_decode(file_get_contents('assets/json/questions/'.$exam_paper));
+		return $json[$quesNumber];
+	}
+	public function check_submitted_data($submitted, $quesNumber, $value){
+		$checked = isset($submitted[$quesNumber]) && is_object($submitted[$quesNumber]) && $submitted[$quesNumber]->opt_id==$value?'checked':(isset($submitted[$quesNumber]) && is_array($submitted[$quesNumber]) && $submitted[$quesNumber]['opt_id'] == $value?'checked':'');
+		return $checked;
+	}
 }
